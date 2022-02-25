@@ -45,7 +45,23 @@ class Tissu {
         $stmt->execute();
      
         return $stmt;
-    }  
+    }
+
+
+    function delete_tissu($id_tissu) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_TISSU=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_tissu);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
 }
-	
-?>
+
+
