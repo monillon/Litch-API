@@ -62,6 +62,24 @@ class Tissu {
 
         return $stmt;
     }
+
+
+    function read_one($id_tissu){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_TISSU=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_tissu);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
 }
 
 
