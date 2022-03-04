@@ -185,6 +185,23 @@ class Prelevement {
 
 	}
 
+	function read_organe($id_organe){
+
+		//select all query
+		$query = " SELECT *	FROM " . $this->table_name . " WHERE ID_ORGANE=?";
+
+		//prepare query statement
+		$stmt = $this->conn->prepare($query);
+
+		$stmt-> bindParam(1,$id_organe);
+
+		//execute query
+		$stmt->execute();
+
+		return $stmt;
+
+	}
+
 }
 
 ?>
