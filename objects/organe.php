@@ -47,7 +47,24 @@ class  Organe {
         $stmt->execute();
      
         return $stmt;
-    }  
+    }
+
+    function delete_organe($id_organe) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_ORGANE=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_organe);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
 }
 	
 ?>
