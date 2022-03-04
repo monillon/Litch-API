@@ -131,5 +131,26 @@ class Sujet{
      
         return $stmt;
     }
+
+
+    function read_sujetLinkedPrelev($id_tissu){
+
+        // select all query
+        $query = "SELECT DISTINCT CODE_SUJET FROM `SUJET` JOIN PRELEVEMENT USING(ID_SUJET) WHERE PRELEVEMENT.ID_TISSU = ?";
+
+
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(1, $id_tissu);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
 }
 ?>
