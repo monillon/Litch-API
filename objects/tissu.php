@@ -17,7 +17,7 @@ class Tissu {
 	
 		//select all query 
 		$query = " SELECT t.id_tissu, t.nom_tissu
-					FROM " . $this->table_name . " t "; 
+					FROM " . $this->table_name . " t ORDER BY nom_tissu ASC";
 					
 		//prepare query statement 
 		$stmt = $this->conn->prepare($query); 
