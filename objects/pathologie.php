@@ -84,6 +84,24 @@ class Pathologie {
         return $stmt;
     }
 
+
+    function read_one($id_patho){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_PATHOLOGIE=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_patho);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
+
 }
 	
 ?>
