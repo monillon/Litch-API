@@ -38,7 +38,7 @@ class Pathologie {
 	
 		//select all query 
 		$query = " SELECT patho.id_pathologie, patho.nom_pathologie 
-					FROM " . $this->table_name . " patho "; 
+					FROM " . $this->table_name . " patho ORDER BY patho.nom_pathologie ASC";
 					
 		//prepare query statement 
 		$stmt = $this->conn->prepare($query); 
