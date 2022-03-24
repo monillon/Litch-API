@@ -38,7 +38,7 @@ class DonneesPreop {
 	
 		//select all query 
 		$query = " SELECT dp.id_preop, dp.nom_preop
-					FROM " . $this->table_name . " dp ";
+					FROM " . $this->table_name . " dp ORDER BY dp.nom_preop ASC";
 					
 		//prepare query statement 
 		$stmt = $this->conn->prepare($query); 
