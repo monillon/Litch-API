@@ -66,5 +66,22 @@ class  Unite {
 		
 		return $stmt; 	
 	}
+
+    function delete_unite($id_unite) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_UNITE=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_unite);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
 }
 ?>
