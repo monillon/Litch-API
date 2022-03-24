@@ -69,6 +69,39 @@ class DonneesPreop {
         return $stmt;
     }
 
+    function delete_preopData($id_preopData) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_PREOP=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_preopData);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
+    function read_one($id_preopData){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_PREOP=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_preopData);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
+
 }
 	
 ?>
