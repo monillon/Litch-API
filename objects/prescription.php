@@ -66,7 +66,39 @@ class Prescription {
         $stmt->execute();
      
         return $stmt;
-    }  
+    }
+
+    function delete_prescription($id_prescription) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_PRESCRIPTION=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_prescription);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    function read_one($id_tissu){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_PRESCRIPTION=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_tissu);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
 
 }
 	
