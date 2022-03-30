@@ -36,7 +36,7 @@ class Prescription {
 	
 		//select all query 
 		$query = " SELECT prescri.id_prescription, prescri.nom_prescription 
-					FROM " . $this->table_name . " prescri ";
+					FROM " . $this->table_name . " prescri ORDER BY prescri.nom_prescription ASC";
 
 
 		//prepare query statement 
