@@ -28,6 +28,26 @@ class CategorieManipulation {
 		return $stmt; 
 		
 	}
+
+    function create($nom_catManip){
+
+        // select all query
+        $query = "INSERT INTO " . $this->table_name . "(NOM_CATEGORIE_MANIP)
+                VALUES(?)";
+
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$nom_catManip);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 }
 	
 ?>
