@@ -47,5 +47,21 @@ class Technique {
      
         return $stmt;
 	}
+
+    function delete($id_technique) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_TECHNIQUE=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_technique);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 }	
 ?>
