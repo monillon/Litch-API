@@ -104,6 +104,21 @@ class Mutation {
         return $stmt;
 
     }
+    function delete($id_mutation) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_MUTATION=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_mutation);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 
 
 }
