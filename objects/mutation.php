@@ -87,7 +87,24 @@ class Mutation {
         $stmt->execute();
      
         return $stmt;
-    }  
+    }
+
+    function read_one($id_mutation){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_MUTATION=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_mutation);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
 
 }
 ?>
