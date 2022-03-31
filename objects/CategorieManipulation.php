@@ -48,6 +48,23 @@ class CategorieManipulation {
         return $stmt;
     }
 
+    function read_one($id_catManip){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_CATEGORIE_MANIP=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_catManip);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
+
 }
 	
 ?>
