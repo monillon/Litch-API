@@ -63,5 +63,22 @@ class Technique {
         return $stmt;
     }
 
+    function read_one($id_technique){
+
+        //select all query
+        $query = "  SELECT * FROM " . $this->table_name . " WHERE ID_TECHNIQUE=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_technique);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
+
 }	
 ?>
