@@ -37,6 +37,6 @@ if ($num > 0) {
 
     // tell the user no emplacements found
     echo json_encode(
-        array("message" => "Aucun id prelevement trouvé pour ce prelevement.")
+        array("message" => "Aucune mutation trouvée avec cet id ")
     );
 }
