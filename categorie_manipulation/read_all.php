@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/categorie_manipulation.php';
+include_once '../objects/CategorieManipulation.php';
  
 // instantiate database and categorie_manipulation object
 $database = new Database();
