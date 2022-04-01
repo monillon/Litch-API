@@ -22,9 +22,10 @@ $mutation = new Mutation($db);
  
 $id_pathologie = isset($_GET["id_pathologie"]) ? $_GET["id_pathologie"] : "";
 $nom_mutation = isset($_GET["nom_mutation"]) ? $_GET["nom_mutation"] : "";
+$classe_mutation = isset($_GET["classe_mutation"]) ? $_GET["classe_mutation"] : "";
 
 // make sure data is not empty
-if(!empty($id_pathologie)&&!empty($nom_mutation))
+if(!empty($id_pathologie) && !empty($nom_mutation) && !empty($classe_mutation))
 {
  
     // set sujet property values
@@ -32,7 +33,7 @@ if(!empty($id_pathologie)&&!empty($nom_mutation))
     $mutation->nom_mutation = $nom_mutation;
     
     // create the sujet
-    if($mutation->create($id_pathologie,$nom_mutation)){
+    if($mutation->create($id_pathologie,$nom_mutation, $classe_mutation)){
  
         // set response code - 201 created
         http_response_code(201);

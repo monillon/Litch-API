@@ -71,18 +71,20 @@ class Mutation {
 	}
 
 
-	function create($id_pathologie,$nom_mutation){
+	function create($id_pathologie,$nom_mutation, $classe_mutation){
     
         // select all query
-        $query = "INSERT INTO " . $this->table_name . "(id_pathologie,nom_mutation)
-                VALUES(?,?)";
-     
+        $query = "INSERT INTO " . $this->table_name . "(id_pathologie,nom_mutation,CLASSE)
+                VALUES(?,?,?)";
+
+
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         
         // bind
         $stmt->bindParam(1,$id_pathologie);
         $stmt->bindParam(2,$nom_mutation);
+        $stmt->bindParam(3,$classe_mutation);
         // execute query
         $stmt->execute();
      
