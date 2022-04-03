@@ -17,7 +17,7 @@ class CategorieManipulation {
 	
 		//select all query 
 		$query = " SELECT catego.id_categorie_manip, catego.nom_categorie_manip 
-					FROM " . $this->table_name . " catego "; 
+					FROM " . $this->table_name . " catego ORDER BY catego.nom_categorie_manip ASC";
 					
 		//prepare query statement 
 		$stmt = $this->conn->prepare($query); 
