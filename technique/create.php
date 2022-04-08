@@ -21,6 +21,7 @@ $technique = new Technique($db);
 //$data = json_decode(file_get_contents("php://input"));
  
 $nom_technique = isset($_GET["nom_technique"]) ? $_GET["nom_technique"] : "";
+$description_technique = isset($_GET["description_technique"]) ? $_GET["description_technique"] : "";
 
 
 // make sure technique is not empty
@@ -34,7 +35,7 @@ if(
     
  
     // create the technique
-    if($technique->create($nom_technique)){
+    if($technique->create($nom_technique, $description_technique)){
  
         // set response code - 201 created
         http_response_code(201);

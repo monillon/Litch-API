@@ -30,17 +30,18 @@ class Technique {
 		
 	}
 
-	function create($nom_technique){
+	function create($nom_technique, $description_technique){
     
         // select all query
-        $query = "INSERT INTO " . $this->table_name . "(nom_technique)
-                VALUES(?)";
+        $query = "INSERT INTO " . $this->table_name . "(NOM_TECHNIQUE, DESCRIPTION_TECHNIQUE)
+                VALUES(?, ?)";
      
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         
         // bind
         $stmt->bindParam(1,$nom_technique);
+        $stmt->bindParam(2,$description_technique);
 
         // execute query
         $stmt->execute();
