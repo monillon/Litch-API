@@ -39,7 +39,7 @@ if($num>0){
          $mutation_item=array(
             "ID_MUTATION" => $id_mutation,
             "NOM_MUTATION" => $nom_mutation,
-            "CLASSE_MUTATION" =>$classe_mutation
+            "CLASSE_MUTATION" =>$classe
         );
  
         array_push($mutations_arr, $mutation_item);
