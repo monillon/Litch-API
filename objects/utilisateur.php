@@ -108,6 +108,25 @@ class Utilisateur {
 		
 	}
 
+    function read_one_id($id_user){
+
+        //select all query
+        $query = " SELECT u.nom_utilisateur
+					FROM " . $this->table_name . " u
+					WHERE u.nom_utilisateur=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        $stmt-> bindParam(1,$id_user);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
 }
 	
 ?>
