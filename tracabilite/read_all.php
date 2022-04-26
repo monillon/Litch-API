@@ -25,7 +25,7 @@ $num = $stmt->rowCount();
 if($num>0){
  
     // tissus array
-    $tissus_arr=array();
+    $trace_arr=array();
  
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -36,21 +36,21 @@ if($num>0){
         // just $name only
         extract($row);
  
-         $tissu_item=array(
-            "ID_TRACE" => $id_tissu,
+         $trace_item=array(
+            "ID_TRACE" => $id_trace,
             "ID_UTILISATEUR" => $id_utilisateur,
             "DATE" => $date,
             "ACTION" => $action
         );
  
-        array_push($tissus_arr, $tissu_item);
+        array_push($trace_arr, $trace_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // show tissus data in json format
-    echo json_encode($tissus_arr);
+    echo json_encode($trace_arr);
 }
  
 else{
