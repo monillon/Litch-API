@@ -39,8 +39,6 @@ if($num>0){
          $protocole_item=array(
             "ID_PROTOCOLE" => $id_protocole,
             "NOM_PROTOCOLE" => $nom_protocole,            
-            "STOCKAGE_PROTOCOLE" => $nom_protocole,
-            "VERSION_PROTOCOLE" => $nom_protocole,
 
         );
  
