@@ -37,6 +37,6 @@ if ($num > 0) {
 
     // tell the user no emplacements found
     echo json_encode(
-        array("message" => "Aucun id tissu trouvé pour cet id.")
+        array("message" => "Aucun id de protocole trouvé pour cet id.")
     );
 }
