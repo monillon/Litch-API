@@ -66,6 +66,21 @@ class Protocole {
 
     }
 
+    function delete($id_protoc) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE ID_PROTOCOLE=?";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // bind
+        $stmt->bindParam(1,$id_protoc);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 
 }	
 ?>
