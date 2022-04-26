@@ -20,7 +20,7 @@ class Tracabilite {
 	
 		//select all query 
 		$query = " SELECT t.id_trace, t.id_utilisateur, t.date, t.action
-					FROM " . $this->table_name . " t "; 
+					FROM " . $this->table_name . " t ORDER BY t.date DESC";
 					
 		//prepare query statement 
 		$stmt = $this->conn->prepare($query);
