@@ -49,6 +49,23 @@ class Protocole {
      
         return $stmt;
 	}
-	
+
+    function read_one($id_protoc){
+
+        //select all query
+        $query = "  SELECT ID_PROTOCOLE, NOM_PROTOCOLE FROM " . $this->table_name . " WHERE ID_PROTOCOLE=?";
+
+        //prepare query statement
+        $stmt = $this->conn->prepare($query);
+        $stmt-> bindParam(1,$id_protoc);
+
+        //execute query
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
+
 }	
 ?>
